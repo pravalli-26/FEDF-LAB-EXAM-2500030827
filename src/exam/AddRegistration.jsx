@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function Registration() {
+function AddRegistration() {
 
   const [student, setStudent] = useState({
     name: "",
@@ -39,10 +39,9 @@ function Registration() {
   };
 
   return (
-
     <div className="form-container">
 
-      <h2>Student Registration</h2>
+      <h2>Add Student Registration</h2>
 
       <form onSubmit={handleSubmit}>
 
@@ -79,7 +78,6 @@ function Registration() {
         />
 
         <div className="gender">
-
           Gender:
 
           <input
@@ -98,7 +96,7 @@ function Registration() {
 
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Add Student</button>
 
       </form>
 
@@ -106,4 +104,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default AddRegistration;

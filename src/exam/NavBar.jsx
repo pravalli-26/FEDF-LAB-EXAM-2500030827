@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
 
 import Home from "./Home";
-import Registration from "./Registration";
+import AddRegistration from "./AddRegistration";
 import ViewStudents from "./ViewStudents";
 import ApiDemo from "./ApiDemo";
 
@@ -12,13 +12,11 @@ function Navbar() {
   return (
     <div>
 
-      
-
       <div className="navbar">
 
         <Link to="/">Home</Link>
 
-        <Link to="/registration">Registration</Link>
+        <Link to="/addregistration">Add Registration</Link>
 
         <Link to="/viewstudents">View Students</Link>
 
@@ -26,13 +24,11 @@ function Navbar() {
 
       </div>
 
-      
-
       <Routes>
 
         <Route path="/" element={<Home />} />
 
-        <Route path="/registration" element={<Registration />} />
+        <Route path="/addregistration" element={<AddRegistration />} />
 
         <Route path="/viewstudents" element={<ViewStudents />} />
 
