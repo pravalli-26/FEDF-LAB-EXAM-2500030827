@@ -1,23 +1,21 @@
 import React, { useState } from "react";
+import "./style.css";
 
 function Registration() {
 
   const [student, setStudent] = useState({
-    name: "",
-    age: "",
-    department: "",
-    email: "",
-    gender: ""
+    name:"",
+    age:"",
+    department:"",
+    email:"",
+    gender:""
   });
 
-  const handleChange = (e) => {
-    setStudent({
-      ...student,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e)=>{
+    setStudent({...student,[e.target.name]:e.target.value});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e)=>{
     e.preventDefault();
 
     let students = JSON.parse(localStorage.getItem("students")) || [];
@@ -26,41 +24,78 @@ function Registration() {
 
     localStorage.setItem("students", JSON.stringify(students));
 
-    alert("Student Registered");
+    alert("Student Added Successfully");
 
     setStudent({
-      name: "",
-      age: "",
-      department: "",
-      email: "",
-      gender: ""
+      name:"",
+      age:"",
+      department:"",
+      email:"",
+      gender:""
     });
   };
 
-  return (
-    <div>
+  return(
 
-      <h2>Student Registration</h2>
+    <div className="form-container">
+
+      <h2>Add Student</h2>
 
       <form onSubmit={handleSubmit}>
 
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} />
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          value={student.name}
+          onChange={handleChange}
+        />
 
-        <input type="number" name="age" placeholder="Age" onChange={handleChange} />
+        <input
+          type="number"
+          name="age"
+          placeholder="Enter Age"
+          value={student.age}
+          onChange={handleChange}
+        />
 
-        <input type="text" name="department" placeholder="Department" onChange={handleChange} />
+        <input
+          type="text"
+          name="department"
+          placeholder="Enter Department"
+          value={student.department}
+          onChange={handleChange}
+        />
 
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+          value={student.email}
+          onChange={handleChange}
+        />
 
-        <br/>
+        <div className="gender">
 
-        Gender
-        <input type="radio" name="gender" value="Male" onChange={handleChange}/> Male
-        <input type="radio" name="gender" value="Female" onChange={handleChange}/> Female
+          Gender:
 
-        <br/>
+          <input
+            type="radio"
+            name="gender"
+            value="Male"
+            onChange={handleChange}
+          /> Male
 
-        <button type="submit">Register</button>
+          <input
+            type="radio"
+            name="gender"
+            value="Female"
+            onChange={handleChange}
+          /> Female
+
+        </div>
+
+        <button type="submit">Add Student</button>
 
       </form>
 
@@ -68,4 +103,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default AddStudent;
