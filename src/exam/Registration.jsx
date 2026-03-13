@@ -4,18 +4,21 @@ import "./style.css";
 function Registration() {
 
   const [student, setStudent] = useState({
-    name:"",
-    age:"",
-    department:"",
-    email:"",
-    gender:""
+    name: "",
+    age: "",
+    department: "",
+    email: "",
+    gender: ""
   });
 
-  const handleChange = (e)=>{
-    setStudent({...student,[e.target.name]:e.target.value});
+  const handleChange = (e) => {
+    setStudent({
+      ...student,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     let students = JSON.parse(localStorage.getItem("students")) || [];
@@ -27,19 +30,19 @@ function Registration() {
     alert("Student Added Successfully");
 
     setStudent({
-      name:"",
-      age:"",
-      department:"",
-      email:"",
-      gender:""
+      name: "",
+      age: "",
+      department: "",
+      email: "",
+      gender: ""
     });
   };
 
-  return(
+  return (
 
     <div className="form-container">
 
-      <h2>Add Student</h2>
+      <h2>Student Registration</h2>
 
       <form onSubmit={handleSubmit}>
 
@@ -95,7 +98,7 @@ function Registration() {
 
         </div>
 
-        <button type="submit">Add Student</button>
+        <button type="submit">Register</button>
 
       </form>
 
@@ -103,4 +106,4 @@ function Registration() {
   );
 }
 
-export default AddStudent;
+export default Registration;
