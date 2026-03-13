@@ -44,23 +44,23 @@ function Registration() {
 
       <form onSubmit={handleSubmit}>
 
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} /><br/>
+        <input type="text" name="name" placeholder="Name" onChange={handleChange} />
 
-        <input type="number" name="age" placeholder="Age" onChange={handleChange} /><br/>
+        <input type="number" name="age" placeholder="Age" onChange={handleChange} />
 
-        <input type="text" name="department" placeholder="Department" onChange={handleChange} /><br/>
+        <input type="text" name="department" placeholder="Department" onChange={handleChange} />
 
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} /><br/>
-
-        <br/>
-
-        Gender<br/>
-        <input type="radio" name="gender" value="Male" onChange={handleChange}/> Male<br/>
-        <input type="radio" name="gender" value="Female" onChange={handleChange}/> Female<br/>
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
 
         <br/>
 
-        <button type="submit">Register</button><br/>
+        Gender
+        <input type="radio" name="gender" value="Male" onChange={handleChange}/> Male
+        <input type="radio" name="gender" value="Female" onChange={handleChange}/> Female
+
+        <br/>
+
+        <button type="submit">Register</button>
 
       </form>
 
